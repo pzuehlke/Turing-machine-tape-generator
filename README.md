@@ -52,14 +52,16 @@ TikZ code for the generated grid diagram.
 ## Writing the output to a text file
 
 The LaTeX code is automatically written to a file named `tikz_code.txt` in
-the same directory. If you want to, you may change this as desired in the
-function's implementation by searching for the lines:
+the same directory. To write into another file, search the script for the line:
 ```
 with open("tikz_code.txt", "w") as file_object:
-    file_object.write(tikz_code)
 ```
+and replace `tikz_code.txt` with the desired file's path. If the file does
+not yet exist, it will be created when the script is run. (_Caution_: if the
+file already exists, its contents will be replaced by the generated LaTeX code
+everytime the script is run!)
 
 ## Dependencies
 
-This script requires a LaTeX distribution with the TikZ package installed to
-compile the generated TikZ code into a graphical representation. 
+A LaTeX distribution with the TikZ package installed is necessary to compile the
+generated TikZ code into a graphical representation. 
