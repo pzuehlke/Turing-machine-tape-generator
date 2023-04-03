@@ -46,18 +46,19 @@ tikz_code = generate_tikz_tape(s, index, length, style)
 
 ## Output 
 
-The function returns a nicely formatted string containing the entire LaTeX
-TikZ code for the generated grid diagram.
+A nicely formatted string containing the entire LaTeX TikZ code for the
+generated grid diagram.
 
 ## Writing the output to a text file
 
-The LaTeX code is automatically written to a file named `tikz_code.txt` in
-the same directory. To write into another file, search the script for the line:
+Because the LaTeX code spans several lines, it is automatically written to a
+file named `tikz_code.txt` in the same directory. To write into another file,
+search the script for the line:
 ```
 with open("tikz_code.txt", "w") as file_object:
 ```
 and replace `tikz_code.txt` with the desired file's path. If the file does
-not yet exist, it will be created when the script is run. (_Caution_: if the
+not yet exist, it will be created when the script is run. (__Caution__: if the
 file already exists, its contents will be replaced by the generated LaTeX code
 everytime the script is run!)
 
