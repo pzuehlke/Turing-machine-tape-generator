@@ -51,18 +51,18 @@ generated grid diagram.
 
 ## Writing the output to a text file
 
-Because the LaTeX code spans several lines, it is automatically written to a
-file named `tikz_code.txt` in the same directory. To write into another file,
-search the script for the line:
+Because the LaTeX code spans several lines, in addition to being returned
+as output, it is automatically written to a file named `tikz_code.txt` in the
+same directory. To write into another file, search the script for the line:
 ```
 with open("tikz_code.txt", "w") as file_object:
 ```
 and replace `tikz_code.txt` with the desired file's path. If the file does
-not yet exist, it will be created when the script is run. (__Caution__: if the
+not yet exist, it will be created when the script is run. (__Caution__: _if the
 file already exists, its contents will be replaced by the generated LaTeX code
-everytime the script is run!)
+everytime the script is run!_)
 
 ## Dependencies
 
 A LaTeX distribution with the TikZ package installed is necessary to compile the
-generated TikZ code into a graphical representation. 
+generated code into a graphical representation. 
