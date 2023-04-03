@@ -52,12 +52,11 @@ TikZ code for the generated grid diagram.
 ## Writing the output to a text file
 
 The LaTeX code is automatically written to a file named `tikz_code.txt` in
-the same directory. You may change this as desired in the function's
-implementation if you like by searching for the lines:
+the same directory. If you want to, you may change this as desired in the
+function's implementation by searching for the lines:
 ```
 with open("tikz_code.txt", "w") as file_object:
     file_object.write(tikz_code)
-
 ```
 
 ## Dependencies
