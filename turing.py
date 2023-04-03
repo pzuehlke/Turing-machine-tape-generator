@@ -86,31 +86,30 @@ def generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:
     return tikz_code
 
 
-# Examples:
+# Example 1:
 s = "r e c u r s i o n !"
 index = 15
 length = 20
 style = "c"
 tikz_code = generate_tikz_tape(s, index, length, style)
 
+# Example 2:
 s = "@1 1 0 1 0 1 1x0 1"
 index = 14
 length = 20
 style = "lrc"
-tikz_code += generate_tikz_tape(s, index, length, style)
+tikz_code = generate_tikz_tape(s, index, length, style)
 
+# Example 3:
 s = "@0 1x0 0 1x0 1x0 1x"
 index = 7
 length = 20
 style = "rc"
-tikz_code += generate_tikz_tape(s, index, length, style)
+tikz_code = generate_tikz_tape(s, index, length, style)
 
+# Example 4:
 s = "3:j0[Y!ZaLh?8/btm27"
 index = 1
 length = 20
 style = "lc"
-tikz_code += generate_tikz_tape(s, index, length, style)
-
-# Write the output to a file:
-with open("tikz_code.txt", "w") as file_object:
-    file_object.write(tikz_code)
+tikz_code = generate_tikz_tape(s, index, length, style)
