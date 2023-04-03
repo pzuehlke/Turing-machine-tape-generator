@@ -17,6 +17,19 @@ which expands on Alan Turing's 1936 paper on computability.
 
 `generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:`
 
+## Examples and usage
+
+![Examples](examples.png)
+
+Code for the second example in the preceding figure:
+```
+s = "@1 1 0 1 0 1 1x0 1"
+index = 14
+length = 20
+style = "lrc"
+tikz_code = generate_tikz_tape(s, index, length, style)
+```
+
 ## Parameters
 
 * `s`: The input string to be displayed inside the tape's squares.
@@ -35,19 +48,6 @@ which expands on Alan Turing's 1936 paper on computability.
 
 The function returns a nicely formatted string containing the entire LaTeX
 TikZ code for the generated grid diagram.
-
-## Examples and usage
-
-![Examples](examples.png)
-
-Code for the second example in the preceding figure:
-```
-s = "@1 1 0 1 0 1 1x0 1"
-index = 14
-length = 20
-style = "lrc"
-tikz_code = generate_tikz_tape(s, index, length, style)
-```
 
 ## Writing the output to a text file
 
