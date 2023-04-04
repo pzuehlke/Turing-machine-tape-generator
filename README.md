@@ -13,10 +13,6 @@ tape in the same style as that in Charles Petzold's (highly recommended) book
 [_The Annotated Turing_](https://www.charlespetzold.com/books/),
 which expands on Alan Turing's 1936 paper on computability.
 
-## Function signature
-
-`generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:`
-
 ## Examples and usage
 
 ![Examples](examples.png)
@@ -29,6 +25,11 @@ length = 20
 style = "lrc"
 tikz_code = generate_tikz_tape(s, index, length, style)
 ```
+
+## Function signature
+
+`generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:`
+
 
 ## Parameters
 
@@ -46,8 +47,8 @@ tikz_code = generate_tikz_tape(s, index, length, style)
 
 ## Output 
 
-A nicely formatted string containing the entire LaTeX TikZ code for the
-generated grid diagram.
+A nicely formatted string containing the entire LaTeX TikZ code required
+to generate the corresponding diagram representing the tape.
 
 ## Writing the output to a text file
 
@@ -64,5 +65,5 @@ everytime the script is run!_)
 
 ## Dependencies
 
-A LaTeX distribution with the TikZ package installed is necessary to compile the
-generated code into a graphical representation. 
+A Python interpreter to run the script and a LaTeX distribution with the TikZ
+package installed to compile the generated code into a graphical representation.
