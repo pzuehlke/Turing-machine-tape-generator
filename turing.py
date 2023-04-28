@@ -79,10 +79,11 @@ def generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:
     tikz_code += "\\medskip"
 
     # Write the output to a file:
-    with open("tikz_code.txt", "w") as file_object:
-        file_object.write(tikz_code)
-
+    with open("tikz_code.txt", "w") as outfile:
+        outfile.write(tikz_code)
     print("The TikZ code has been successfully generated!")
+    outfile.close()
+
     return tikz_code
 
 

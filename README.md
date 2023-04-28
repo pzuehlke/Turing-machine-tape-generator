@@ -9,7 +9,7 @@ squares and a few style options.
 
 It is intended to quickly and conveniently produce a representation of the
 contents of a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine)'s
-tape in the same style as that in Charles Petzold's (highly recommended) book
+tape in the same style as that in Charles Petzold's book
 [_The Annotated Turing_](https://www.charlespetzold.com/books/),
 which expands on Alan Turing's 1936 paper on computability.
 
@@ -29,7 +29,6 @@ tikz_code = generate_tikz_tape(s, index, length, style)
 ## Function signature
 
 `generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:`
-
 
 ## Parameters
 
@@ -56,7 +55,7 @@ Because the LaTeX code spans several lines, in addition to being returned
 as output, it is automatically written to a file named `tikz_code.txt` in the
 same directory. To write into another file, search the script for the line:
 ```
-with open("tikz_code.txt", "w") as file_object:
+with open("tikz_code.txt", "w") as outfile:
 ```
 and replace `tikz_code.txt` with the desired file's path. If the file does
 not yet exist, it will be created when the script is run. (__Caution__: _if the
