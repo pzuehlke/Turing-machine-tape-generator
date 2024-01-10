@@ -23,7 +23,8 @@ tikz_code = generate_tikz_tape(s, index, length, style)
 
 * `s`: The input string to be displayed inside the tape's squares.
 * `index`: The index of the square to be highlighted with an ultra-thick
-  border, representing the current position of the machine's head.
+  border, representing the current position of the machine's head. The initial
+  index is 0.
 * `length`: The number of squares (excluding extra squares) in the tape.
 * `style`: A string specifying some options for the tape. The presence of
   the characters `c`, `l` or `r` has the following effects:
