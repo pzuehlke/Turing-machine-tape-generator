@@ -82,7 +82,6 @@ def generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:
     with open("tikz_code.txt", "w") as outfile:
         outfile.write(tikz_code)
     print("The TikZ code has been successfully generated!")
-    outfile.close()
 
     return tikz_code
 
