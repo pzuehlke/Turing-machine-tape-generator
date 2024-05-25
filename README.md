@@ -1,58 +1,38 @@
-# TikZ Turing machine tape generator
+# Turing Machine Tape Generator
 
-This Python script provides a function, `generate_tikz_tape`, that automatically generates [LaTeX](https://en.wikipedia.org/wiki/LaTeX) source code for a [TikZ](https://en.wikipedia.org/wiki/PGF/TikZ) diagram consisting of a grid of squares. The squares contain characters from a given input string, with an ultra-thick border around a specified square, a customizable total number of squares and a few style options.
+This repository contains Python scripts designed to automate the generation and compilation of [LaTeX](https://en.wikipedia.org/wiki/LaTeX)/[TikZ](https://en.wikipedia.org/wiki/PGF/TikZ) source code for visually representing the tape of a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine).
 
-It is intended to quickly and conveniently produce a representation of the contents of a [Turing machine](https://en.wikipedia.org/wiki/Turing_machine)'s tape in the same style as that in Charles Petzold's book [_The Annotated Turing_](https://www.charlespetzold.com/books/), which expands on Alan Turing's 1936 paper on computability.
-
-## Examples and usage
 
 ![Examples](examples.png)
 
-Code for the second example in the preceding figure:
+
+The generated diagram follows the same style as that in Charles Petzold's book [_The Annotated Turing_](https://www.charlespetzold.com/books/). It consists of a grid of squares containing characters from a given input string, with an ultra-thick border around a specified square to indicate the current position of the head, a customizable total number of squares and a few style options.
+
+## Structure
+
+The program consists of three scripts:
+
+1. `generate_tikz_code.py` - Generates the LaTeX/TikZ source code and saves it to the file `tikz_code.tex`.
+2. `compile_latex.py` - Compiles the generated LaTeX file to a PDF and saves it inside an `output` folder together with associated `.aux` and `.log` files.
+3. `main.py` - Main script; calls the other two scripts to produce the LaTeX source code and PDF files.
+
+## Requirements
+
+* Python 3.x
+* A LaTeX distribution with `pdflatex` (e.g., TeX Live, MiKTeX)
+* The [TikZ](https://en.wikipedia.org/wiki/PGF/TikZ) package for LaTeX
+
+## Usage
+
+Just edit the variables in `main.py` to customize the tape's content according to the explanations there. Here's the code used to produce the first example in the preceding figure:
+```python
+s = "r e c u r s i o n !"  # The string to be printed on the tape
+head = 15    # The position of the head (0-based)
+length = 20  # The total number of squares
+style = "c"  # Additional style options
 ```
-s = "@1 1 0 1 0 1 1x0 1"
-index = 14
-length = 20
-style = "lrc"
-tikz_code = generate_tikz_tape(s, index, length, style)
+
+Then run the main script through the Python interpreter:
+```bash
+python3 main.py
 ```
-
-## Description of the parameters and output
-
-`generate_tikz_tape(s: str, index: int, length: int, style: str) -> str:`
-
-* `s`: The input string to be displayed inside the tape's squares.
-* `index`: The index of the square to be highlighted with an ultra-thick
-  border, representing the current position of the machine's head. The initial
-  index is 0.
-* `length`: The number of squares (excluding extra squares) in the tape.
-* `style`: A string specifying some options for the tape. The presence of
-  the characters `c`, `l` or `r` has the following effects:
-    * `c`: Center the TikZ picture on the screen.
-    * `l`: Add two extra squares at the beginning, with left edges
-      missing and "..." displayed.
-    * `r`: Add two extra squares at the end, with right edges
-          missing and "..." displayed.
-
-The output is a nicely formatted string containing the entire LaTeX TikZ code
-required to generate the corresponding diagram representing the tape.
-
-## Writing the output directly to a text file
-
-Because the LaTeX code spans several lines, in addition to being returned
-as output, it is automatically written to a file named `tikz_code.txt` in the
-same directory. To write into another file, search the end of the script for the
-line:
-```
-with open("tikz_code.txt", "w") as outfile:
-```
-and replace `tikz_code.txt` with the desired file's path. If the file does
-not yet exist, it will be created when the script is run.
-
-⚠️ _If the file already exists, its contents will be replaced by the generated
-LaTeX code everytime the script is run!_
-
-## Dependencies
-
-A Python interpreter to run the script and a LaTeX distribution with the TikZ
-package installed to compile the generated code into a graphical representation.
