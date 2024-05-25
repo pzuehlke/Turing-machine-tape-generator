@@ -17,9 +17,9 @@ if __name__ == "__main__":
     #   - 'r': Add two extra squares at the end, with right edges
     #      missing and "..." displayed.
 
-    # Generate TikZ code and save to .tex file:
+    # Generate TikZ code and save to a .tex file named `tikz_code.tex`:
     generate_tikz_tape(s, head, length, style)
 
-    # Compile the LaTeX file to a PDF:
+    # Compile the LaTeX file to a PDF file `output/tikz_code.pdf`:
     latex_file = "tikz_code.tex"
     compile_latex_to_pdf(latex_file, output_dir="output")
